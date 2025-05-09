@@ -28,9 +28,6 @@ type MovieData = {
   vote_average: number;
   vote_count: number;
 };
-type genreName = {
-  name: string;
-};
 
 export const GenrePage = () => {
   const router = useRouter();

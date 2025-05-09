@@ -1,5 +1,5 @@
 "use client";
-import { useParams, useRouter } from "next/navigation";
+import { useParams } from "next/navigation";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Play, Star } from "lucide-react";
@@ -124,7 +124,7 @@ export default function MovieDetailPage() {
       <Production />
       <div className="flex justify-between md:py-10"></div>
       <Trailer trailerKey={trailerkey} setTrailerKey={setTrailerKey} />
-      <SimilarMovies movieId={movie.id} genres={movie.genres} />
+      <SimilarMovies movieId={movie.id} />
     </div>
   );
 }

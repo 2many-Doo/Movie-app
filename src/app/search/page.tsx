@@ -45,7 +45,6 @@ const Search = () => {
   );
   const movies: MovieData[] = data?.results ?? [];
   const totalPage = data?.total_pages ?? 0;
-  const totalResults = data?.total_results ?? 0;
 
   const filteredMovies = movies.filter((movie: MovieData) => {
     if (selectedGenresId.length === 0) return true;

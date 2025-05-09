@@ -1,9 +1,8 @@
 "use client";
-import { useSearchParams, usePathname } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 
 export const useURLSearchParams = () => {
   const searchParams = useSearchParams();
-  const pathname = usePathname();
 
   const selectedGenresId =
     searchParams.get("genreIds")?.split(",").filter(Boolean) ?? [];
