@@ -33,7 +33,7 @@ export const GenrePage = () => {
   const router = useRouter();
   const params = useSearchParams();
   const { selectedGenresId, generateQuery } = useURLSearchParams();
-  const page = params.get("page") ?? 1;
+  const page = params.get("page") ?? "1";
   const handleSelectedGenre = (genreId: string) => {
     const newPath = generateQuery(genreId);
     router.push(newPath);
@@ -45,7 +45,7 @@ export const GenrePage = () => {
   const { data: dataMovie } = useClint(
     `/discover/movie?language=en&with_genres=${selectedGenresId.join(
       ","
-    )}&page=1${page}`
+    )}&page${page}`
   );
   const movie: MovieData[] = dataMovie?.results ?? [];
   const totalResults = dataMovie?.total_results;

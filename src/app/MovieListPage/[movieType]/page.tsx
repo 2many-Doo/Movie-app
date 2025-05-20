@@ -19,7 +19,7 @@ const MovieListPage = () => {
   const searchParam = useSearchParams();
 
   const { movieType } = useParams();
-  const page = searchParam.get("page") ?? 1;
+  const page = searchParam.get("page") ?? "1";
 
   const movieMap: Record<MoviesByListCategoryProps["movieType"], string> = {
     upcoming: "Upcoming Movies",
