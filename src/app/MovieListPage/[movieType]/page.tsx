@@ -14,7 +14,7 @@ type Movie = {
 type MoviesByListCategoryProps = {
   movieType: "upcoming" | "popular" | "top_rated";
 };
-export const MovieListPage = () => {
+const MovieListPage = () => {
   const router = useRouter();
   const searchParam = useSearchParams();
 
@@ -33,7 +33,8 @@ export const MovieListPage = () => {
   const movies = data?.results ?? [];
   const totalPage = data?.total_pages;
   if (!data) {
-    return <MovieListSkeletom />;
+    <MovieListSkeletom />;
+    return;
   }
 
   return (
@@ -68,3 +69,5 @@ export const MovieListPage = () => {
     </div>
   );
 };
+
+export default MovieListPage;
