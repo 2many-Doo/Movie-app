@@ -1,6 +1,6 @@
 "use client";
 import { useParams } from "next/navigation";
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Play, Star } from "lucide-react";
 import { useClint } from "@/hooks/useClint";
@@ -55,9 +55,9 @@ export default function MovieDetailPage() {
 
   if (!data) {
     return (
-      <div>
-        <DetailSkelton />;
-      </div>
+      <Suspense fallback={<div>Хуудас ачааллаж байна...</div>}>
+        <DetailSkelton />
+      </Suspense>
     );
   }
 
