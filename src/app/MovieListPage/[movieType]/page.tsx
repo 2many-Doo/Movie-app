@@ -68,5 +68,3 @@ export const MovieListPage = () => {
     </div>
   );
 };
-
-export default MovieListPage;
